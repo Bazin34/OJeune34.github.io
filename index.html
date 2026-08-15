@@ -1,156 +1,1193 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bolet Chez Doudou</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jeune Tech | Boutique</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fb;
+    color:#222;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:linear-gradient(135deg,#0066ff,#003399);
+    color:white;
+    padding:15px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+
+/* LOGO */
+
+.logo img{
+    width:120px;
+    height:auto;
+    display:block;
+}
+
+
+/* MENU */
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#ffd700;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:520px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eaf2ff,
+        #ffffff
+    );
+}
+
+.hero h1{
+    font-size:48px;
+    color:#003399;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+
+/* BUTTON */
+
+.btn{
+    display:inline-block;
+
+    background:#0066ff;
+    color:white;
+
+    padding:13px 27px;
+
+    border-radius:25px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#003399;
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:60px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:32px;
+    color:#003399;
+    margin-bottom:10px;
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+
+    gap:20px;
+}
+
+.category{
+
+    background:white;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    border-radius:12px;
+
+    box-shadow:
+    0 5px 15px #ddd;
+
+    transition:0.3s;
+}
+
+.category:hover{
+    transform:translateY(-5px);
+}
+
+.category .icon{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.category h3{
+    color:#003399;
+    margin-bottom:8px;
+}
+
+
+/* =========================
+   PRODUITS
+========================= */
+
+.products{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(230px,1fr)
+    );
+
+    gap:25px;
+}
+
+.product{
+
+    background:white;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 5px 15px #ddd;
+
+    transition:0.3s;
+}
+
+.product:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:
+    0 10px 25px #ccc;
+}
+
+.product img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+}
+
+.product-info{
+    padding:20px;
+}
+
+.product-info h3{
+
+    color:#003399;
+
+    margin-bottom:10px;
+}
+
+.product-info p{
+
+    color:#666;
+
+    line-height:1.5;
+}
+
+.price{
+
+    color:#0066ff;
+
+    font-size:23px;
+
+    font-weight:bold;
+
+    margin:15px 0;
+}
+
+.buy{
+
+    display:block;
+
+    text-align:center;
+
+    background:#0066ff;
+
+    color:white;
+
+    padding:11px;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.buy:hover{
+    background:#003399;
+}
+
+
+/* =========================
+   A PROPOS
+========================= */
+
+.about{
+
+    background:white;
+
+    text-align:center;
+}
+
+.about p{
+
+    max-width:800px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    color:#555;
+
+    font-size:17px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:#f5f7fb;
+}
+
+.contact-box{
+
+    max-width:650px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:12px;
+
+    box-shadow:
+    0 5px 15px #ddd;
+}
+
+
+/* FORMULAIRE */
+
+.contact-box input,
+.contact-box textarea{
+
+    width:100%;
+
+    padding:13px;
+
+    margin-bottom:15px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    outline:none;
+}
+
+.contact-box input:focus,
+.contact-box textarea:focus{
+
+    border-color:#0066ff;
+}
+
+.contact-box textarea{
+    resize:vertical;
+}
+
+.contact-box button{
+    width:100%;
+    font-size:16px;
+}
+
+
+/* =========================
+   MESSAGE SUCCÈS
+========================= */
+
+#success-message{
+
+    display:none;
+
+    margin-top:15px;
+
+    padding:13px;
+
+    background:#d4edda;
+
+    color:#155724;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    text-align:center;
+}
+
+
+/* =========================
+   MESSAGE ERREUR
+========================= */
+
+#error-message{
+
+    display:none;
+
+    margin-top:15px;
+
+    padding:13px;
+
+    background:#f8d7da;
+
+    color:#721c24;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    text-align:center;
+}
+
+
+/* =========================
+   CONTACT INFOS
+========================= */
+
+.contact-info{
+
+    text-align:center;
+
+    margin-top:30px;
+}
+
+.contact-info p{
+
+    margin:12px;
+
+    font-size:16px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#222;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:700px){
+
+    header{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        padding:15px 20px;
     }
 
-    header {
-      background-color: #4CAF50;
-      color: white;
-      padding: 20px;
-      text-align: center;
+    .logo img{
+        width:100px;
     }
 
-    nav ul {
-      list-style: none;
-      padding: 0;
+    nav{
+        text-align:center;
     }
 
-    nav ul li {
-      display: inline;
-      margin: 0 15px;
+    nav a{
+
+        margin:5px;
+
+        display:inline-block;
+
+        font-size:14px;
     }
 
-    nav ul li a {
-      color: white;
-      text-decoration: none;
+    .hero h1{
+        font-size:35px;
     }
 
-    section {
-      padding: 20px;
-      text-align: center;
+    .hero p{
+        font-size:17px;
     }
 
-    footer {
-      background-color: #222;
-      color: white;
-      padding: 40px 0;
+    section{
+        padding:45px 20px;
     }
 
-    .footer-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+}
 
-    .footer-section {
-      flex: 1;
-      min-width: 200px;
-      margin: 10px;
-    }
+</style>
 
-    .footer-section h3 {
-      margin-bottom: 10px;
-      color: #4CAF50;
-    }
-
-    .footer-section ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .footer-section ul li {
-      margin: 5px 0;
-    }
-
-    .footer-section ul li a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .footer-section ul li a:hover {
-      text-decoration: underline;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      padding-top: 20px;
-      border-top: 1px solid #444;
-    }
-
-    .footer-section .social a {
-      color: #4CAF50;
-      margin: 0 5px;
-      text-decoration: none;
-    }
-
-    .footer-section .social a:hover {
-      text-decoration: underline;
-    }
-  </style>
 </head>
+
+
 <body>
-  <header>
-    <h1> Chez Doudou Borlette</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">Accueil</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contactez-nous</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section id="home">
-    <h2>Bienvenue chez  Doudou Borlette</h2>
-    <p>Les meilleurs services de loterie en Floride, Géorgie, New York, Texas, et Tennessee!</p>
-  </section>
 
-  <footer>
-    <div class="footer-container">
-      <div class="footer-section about">
-        <h3>À propos</h3>
-        <p>Bolet Chez Doudou est un service de loterie qui permet aux clients de se connecter facilement à des chances de gagner de gros prix dans plusieurs états.</p>
-      </div>
+<!-- =========================
+     HEADER
+========================= -->
 
-      <div class="footer-section links">
-        <h3>Liens Utiles</h3>
-        <ul>
-          <li><a href="#home">Accueil</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contactez-nous</a></li>
-        </ul>
-      </div>
+<header>
 
-      <div class="footer-section contact">
-        <h3>Contactez-nous</h3>
-        <p><i class="fas fa-map-marker-alt"></i> Floride, USA</p>
-        <p><i class="fas fa-phone-alt"></i> +1 234-567-890</p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:contact@boletchezdoudou.com">contact@boletchezdoudou.com</a></p>
-        <p><i class="fas fa-clock"></i> Lundi - Samedi: 8 AM - 4 PM</p>
-      </div>
+<div class="logo">
 
-      <div class="footer-section social">
-        <h3>Suivez-nous</h3>
-        <a href="https://facebook.com" target="_blank">Facebook</a> |
-        <a href="https://instagram.com" target="_blank">Instagram</a> |
-        <a href="https://twitter.com" target="_blank">Twitter</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2025 Bolet Chez Doudou | Tous droits réservés.
-    </div>
-  </footer>
+<img
+    src="logo1.jpeg"
+    alt="Logo Jeune Tech"
+>
+
+</div>
+
+
+<nav>
+
+<a href="#accueil">
+Accueil
+</a>
+
+<a href="#categories">
+Catégories
+</a>
+
+<a href="#produits">
+Produits
+</a>
+
+<a href="#apropos">
+À propos
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
+</nav>
+
+</header>
+
+
+
+<!-- =========================
+     ACCUEIL
+========================= -->
+
+<section
+    class="hero"
+    id="accueil"
+>
+
+<div>
+
+<h1>
+Bienvenue chez Jeune Tech
+</h1>
+
+
+<p>
+
+Découvrez nos produits technologiques
+<br>
+
+à des prix accessibles.
+
+</p>
+
+
+<a
+    href="#produits"
+    class="btn"
+>
+
+🛍️ Voir nos produits
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CATEGORIES
+========================= -->
+
+<section id="categories">
+
+<div class="section-title">
+
+<h2>
+Nos catégories
+</h2>
+
+<p>
+Découvrez nos différentes catégories de produits.
+</p>
+
+</div>
+
+
+<div class="categories">
+
+
+<div class="category">
+
+<div class="icon">
+📱
+</div>
+
+<h3>
+Smartphones
+</h3>
+
+<p>
+Téléphones et accessoires
+</p>
+
+</div>
+
+
+
+<div class="category">
+
+<div class="icon">
+💻
+</div>
+
+<h3>
+Ordinateurs
+</h3>
+
+<p>
+PC et accessoires informatiques
+</p>
+
+</div>
+
+
+
+<div class="category">
+
+<div class="icon">
+🎧
+</div>
+
+<h3>
+Audio
+</h3>
+
+<p>
+Écouteurs et casques
+</p>
+
+</div>
+
+
+
+<div class="category">
+
+<div class="icon">
+⌚
+</div>
+
+<h3>
+Accessoires
+</h3>
+
+<p>
+Gadgets technologiques
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PRODUITS
+========================= -->
+
+<section id="produits">
+
+<div class="section-title">
+
+<h2>
+Nos produits
+</h2>
+
+<p>
+Découvrez nos produits disponibles.
+</p>
+
+</div>
+
+
+<div class="products">
+
+
+<!-- PRODUIT 1 -->
+
+<div class="product">
+
+<img
+    src="produit1.jpg"
+    alt="Smartphone Samsung"
+>
+
+<div class="product-info">
+
+<h3>
+Smartphone Samsung
+</h3>
+
+<p>
+Smartphone performant avec une
+grande capacité de stockage.
+</p>
+
+<div class="price">
+250 $
+</div>
+
+<a
+    href="https://wa.me/50934910079"
+    class="buy"
+>
+
+💬 Commander
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- PRODUIT 2 -->
+
+<div class="product">
+
+<img
+    src="produit2.jpg"
+    alt="Écouteurs Bluetooth"
+>
+
+<div class="product-info">
+
+<h3>
+Écouteurs Bluetooth
+</h3>
+
+<p>
+Écouteurs sans fil avec une
+excellente qualité audio.
+</p>
+
+<div class="price">
+35 $
+</div>
+
+<a
+    href="https://wa.me/50934910079"
+    class="buy"
+>
+
+💬 Commander
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- PRODUIT 3 -->
+
+<div class="product">
+
+<img
+    src="produit3.jpg"
+    alt="Smart Watch"
+>
+
+<div class="product-info">
+
+<h3>
+Smart Watch
+</h3>
+
+<p>
+Montre intelligente avec plusieurs
+fonctionnalités.
+</p>
+
+<div class="price">
+60 $
+</div>
+
+<a
+    href="https://wa.me/50934910079"
+    class="buy"
+>
+
+💬 Commander
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- PRODUIT 4 -->
+
+<div class="product">
+
+<img
+    src="produit4.jpg"
+    alt="Casque Bluetooth"
+>
+
+<div class="product-info">
+
+<h3>
+Casque Bluetooth
+</h3>
+
+<p>
+Casque confortable avec un son
+de haute qualité.
+</p>
+
+<div class="price">
+45 $
+</div>
+
+<a
+    href="https://wa.me/50934910079"
+    class="buy"
+>
+
+💬 Commander
+
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     A PROPOS
+========================= -->
+
+<section
+    class="about"
+    id="apropos"
+>
+
+<div class="section-title">
+
+<h2>
+À propos de Jeune Tech
+</h2>
+
+</div>
+
+
+<p>
+
+Jeune Tech est une boutique spécialisée
+dans les produits technologiques et les
+accessoires numériques.
+
+Notre objectif est de proposer des produits
+de qualité à des prix accessibles tout en
+offrant un excellent service à nos clients.
+
+</p>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+    class="contact"
+    id="contact"
+>
+
+<div class="section-title">
+
+<h2>
+Contactez-nous
+</h2>
+
+<p>
+
+Une question ? Besoin d'informations
+sur un produit ?
+
+Envoyez-nous un message.
+
+</p>
+
+</div>
+
+
+<div class="contact-box">
+
+
+<!-- FORMSPREE -->
+
+<form
+    id="contact-form"
+
+    action="https://formspree.io/f/mbgragvq"
+
+    method="POST"
+>
+
+
+<input
+    type="text"
+    name="nom"
+    placeholder="Votre nom"
+    required
+>
+
+
+<input
+    type="email"
+    name="email"
+    placeholder="Votre adresse email"
+    required
+>
+
+
+<input
+    type="text"
+    name="sujet"
+    placeholder="Sujet"
+    required
+>
+
+
+<textarea
+    name="message"
+    rows="6"
+    placeholder="Votre message..."
+    required
+></textarea>
+
+
+<button
+    type="submit"
+    class="btn"
+>
+
+📩 Envoyer le message
+
+</button>
+
+
+<p id="success-message">
+
+✅ Votre message a été envoyé avec succès !
+
+</p>
+
+
+<p id="error-message">
+
+❌ Une erreur est survenue.
+Veuillez réessayer.
+
+</p>
+
+
+</form>
+
+
+
+<!-- INFORMATIONS -->
+
+<div class="contact-info">
+
+<p>
+📞 WhatsApp :
+34 91 00 79
+</p>
+
+<p>
+📧 Email :
+jeune.tech@gmail.com
+</p>
+
+<p>
+📍 Adresse :
+Port-au-Prince, Haïti
+</p>
+
+
+<a
+    href="https://wa.me/50934910079"
+    class="btn"
+>
+
+💬 Contacter sur WhatsApp
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<p>
+
+© 2026 Jeune Tech -
+Tous droits réservés.
+
+</p>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+/* =========================
+   FORMSPREE
+========================= */
+
+const form =
+document.getElementById(
+    "contact-form"
+);
+
+
+const successMessage =
+document.getElementById(
+    "success-message"
+);
+
+
+const errorMessage =
+document.getElementById(
+    "error-message"
+);
+
+
+form.addEventListener(
+    "submit",
+    async function(event){
+
+        event.preventDefault();
+
+
+        successMessage.style.display =
+        "none";
+
+        errorMessage.style.display =
+        "none";
+
+
+        const formData =
+        new FormData(form);
+
+
+        try{
+
+            const response =
+            await fetch(
+                form.action,
+                {
+
+                    method:"POST",
+
+                    body:formData,
+
+                    headers:{
+                        "Accept":
+                        "application/json"
+                    }
+
+                }
+            );
+
+
+            if(response.ok){
+
+                form.reset();
+
+                successMessage.style.display =
+                "block";
+
+            }
+
+            else{
+
+                errorMessage.style.display =
+                "block";
+
+            }
+
+
+        }
+
+        catch(error){
+
+            errorMessage.style.display =
+            "block";
+
+        }
+
+    }
+);
+
+</script>
+
+
 </body>
+
 </html>
